@@ -12,6 +12,8 @@ export default function Home({ latestPost }:
         return <h1>Example Heading</h1>;
 }
 
+//Make function in lib
+
 export const getStaticProps: GetStaticProps = async () => {
     let latestPost = {
         title: "title",
