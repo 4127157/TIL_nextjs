@@ -10,10 +10,7 @@ function fileFetcher(str: string){
     const fileNames = fs.readdirSync(postsDir);
 
     if(str === 'latest'){
-        let latestVal = fileNames
-        .map(fileName => parseInt(fileName.replace(/\.md$/, '')))
-        .reduce((prev, curr) => { return prev = curr > prev ? curr : prev });
-        return latestVal.toString();
+        return getLatestPostNum().toString();
     } else {
         return fileNames.map(fileName => {
             return {
@@ -29,8 +26,58 @@ export function getLatestPost(){
     return getPostData(fileFetcher('latest') as string);
 }
 
+export function getLatestPostNum(){
+    let files = fs.readdirSync(postsDir);
+
+    let latestVal = files
+    .map(fileName => parseInt(fileName.replace(/\.md$/, '')))
+    .reduce((prev, curr) => { return prev = curr > prev ? curr : prev });
+    return latestVal;
+}
+
+export function getOldestPostNum(){}
+
 export function getAllPostsPaths(){
     return fileFetcher('');
+}
+
+export function getPrevNext(postId: string){
+    
+    let files = fs.readdirSync(postsDir);
+
+    let filesNumArr = files
+    .map(fileName => parseInt(fileName.replace(/\.md$/, '')));
+
+    let latestPostNum = getLatestPostNum();
+
+    let oldestPostNum = filesNumArr
+    .reduce((prev, curr) => prev = curr < prev ? curr : prev);
+
+    let postIdNum: null | number = null;
+
+    postId != '/' ? 
+        postIdNum = parseInt(postId) :
+        postIdNum = latestPostNum;
+
+    if(postIdNum === latestPostNum){
+        return {
+            prevLink: (latestPostNum - 1).toString(),
+            nextLink: '',
+        };
+    }
+
+    if(postIdNum === oldestPostNum){
+        return {
+            prevLink: '',
+            nextLink: (oldestPostNum + 1).toString(),
+        };
+    }
+
+    return {
+        prevLink: (postIdNum - 1).toString(),
+        nextLink: (postIdNum + 1).toString(),
+    }
+
 }
 
 export async function getPostData(id: string){

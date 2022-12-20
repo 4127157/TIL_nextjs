@@ -1,18 +1,22 @@
 import { GetStaticProps } from "next";
-import { getLatestPost } from '../lib/posts';
+import NavComp from "../components/NavComp";
+import { getLatestPost, getPrevNext } from '../lib/posts';
 
-export default function Home({ latestPost }: 
+export default function Home({ latestPost, prevLink, nextLink }: 
 {
     latestPost: {
         title: string,
         date: string,
         contentHtml: string
-    }
+    },
+    prevLink: string,
+    nextLink: string,
 })
     {
         return (
             <>
                 <div dangerouslySetInnerHTML={{__html: latestPost.contentHtml}} />
+                <NavComp prev={prevLink} next={nextLink}/>
             </>
         );
 }
@@ -21,9 +25,12 @@ export default function Home({ latestPost }:
 
 export const getStaticProps: GetStaticProps = async () => {
     let latestPost = await getLatestPost();
+    const { prevLink, nextLink } = getPrevNext('/');
     return {
         props: {
-            latestPost
+            latestPost,
+            prevLink,
+            nextLink
         },
     };
     
