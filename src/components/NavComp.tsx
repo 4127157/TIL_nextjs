@@ -7,16 +7,19 @@ type Props = {
 };
 
 const NavComp = ({prev, next}: Props) => {
-    return (
-        <section>
-            { prev == '' ? 
-            <NavButton to='/' text='Home'/> :
-            <NavButton to={prev} text="Previous"/>}
-            { next == '' ? 
-            <NavButton to='/' text='Home'/>  : 
-            <NavButton to={next} text="Next"/>}
-        </section>
-    );
+    if(prev !== undefined && next !== undefined){
+        return (
+            <section>
+                { prev == '' ? 
+                <NavButton to='/' text='Home'/> :
+                <NavButton to={prev} text="Previous"/>}
+                { next == '' ? 
+                <NavButton to='/' text='Home'/>  : 
+                <NavButton to={next} text="Next"/>}
+            </section>
+        );
+    }
+    return <></>;
 }
 
 export default NavComp;

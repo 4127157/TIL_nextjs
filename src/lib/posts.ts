@@ -12,13 +12,14 @@ function fileFetcher(str: string){
     if(str === 'latest'){
         return getLatestPostNum().toString();
     } else {
-        return fileNames.map(fileName => {
+        let tempArr = fileNames.map(fileName => {
             return {
                 params: {
                     id: fileName.replace(/\.md$/, '')
                 }
             };
         });
+        return tempArr;
     }
 }
 
