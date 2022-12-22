@@ -1,3 +1,4 @@
+import headerStyles from '../styles/Header.module.css';
 
 type Props = {
     title: string,
@@ -7,9 +8,11 @@ type Props = {
 export default function Header({title, date}: Props) {
     //TODO: Have to format date to human readable form with date-fns 
     return (
-        <header>
-            <h1>{title} - Aryansh Malviya's TIL</h1>
-            <span>Published: <time dateTime={date} lang='en'>{date}</time></span>
+        <header className={headerStyles.headerClass}>
+            <div>
+                <h1>TIL - {title}</h1>
+                <span className={headerStyles.dateClass}>Published: <time dateTime={date} lang='en'>{date}</time></span>
+            </div>
         </header>
     );
 }

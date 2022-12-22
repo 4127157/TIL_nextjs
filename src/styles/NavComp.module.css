@@ -1,0 +1,17 @@
+.sectionClass {
+    min-width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.interactionContainer {
+    margin: auto;
+    width: calc(100vw/2);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+

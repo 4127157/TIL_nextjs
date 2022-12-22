@@ -9,13 +9,17 @@ type Props = {
 const NavComp = ({prev, next}: Props) => {
     if(prev !== undefined && next !== undefined){
         return (
-            <section>
-                { prev == '' ? 
-                <NavButton to='/' text='Home'/> :
-                <NavButton to={prev} text="Previous"/>}
-                { next == '' ? 
-                <NavButton to='/' text='Home'/>  : 
-                <NavButton to={next} text="Next"/>}
+            <section className={styles.sectionClass}>
+                <div className={styles.interactionContainer}>
+                    <div className={styles.buttonContainer}>
+                        { prev == '' ? 
+                        <NavButton align='left' to='/' text='Home'/> :
+                        <NavButton align='left' to={prev} text="Previous"/>}
+                        { next == '' ? 
+                        <NavButton align='right' to='/' text='Home'/>  : 
+                        <NavButton align='right' to={next} text="Next"/>}
+                    </div>
+                </div>
             </section>
         );
     }

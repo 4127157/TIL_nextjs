@@ -1,3 +1,4 @@
+import layoutStyles from '../styles/Layout.module.css';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
@@ -13,14 +14,11 @@ type Props = {
 
 export default function Layout({ children, prevLink, nextLink, pageTitle, postDate }: Props){
         return ( 
-            <>
-                <Head>
-                    <title>{pageTitle}</title>
-                </Head>
+            <div className={layoutStyles.mainContent}>
                 <Header title={pageTitle} date={postDate}/>
-                <main>{children}</main>
+                <main className={layoutStyles.articleContent}>{children}</main>
                 <NavComp prev={prevLink} next={nextLink}/>
                 <Footer/>
-            </>
+            </div>
         );
 }

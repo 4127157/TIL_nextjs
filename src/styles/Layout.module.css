@@ -1,0 +1,12 @@
+.mainContent {
+    min-height: 100vh;
+    min-width: 100vw;
+    max-width: 100vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+}
+
+.articleContent {
+    margin: 0 auto;
+    max-width: calc(100vw/2);
+}

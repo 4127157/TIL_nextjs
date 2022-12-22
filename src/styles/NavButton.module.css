@@ -1,0 +1,21 @@
+.navButton {
+    color: black;
+    padding: 1.5em 1em;
+    background-color: #EEEEEE;
+    width: 10em;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+.navButton:hover{
+    background-color: #E0E0E0;
+    text-decoration: none;
+}
+
+.navButton:active {
+    background-color: #BDBDBD;
+}
+
+.textAligner {
+    text-align: right;
+}
