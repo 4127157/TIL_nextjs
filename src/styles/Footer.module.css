@@ -7,6 +7,26 @@
     background-color: #E0E0E0;
 }
 
-.footer li {
+.Emoji {
+    font-size: 0.9em;
+}
+
+.List {
+    line-height: 2em;
+}
+
+.List li {
+    min-width: 13em;
+    display: block;
     list-style: none;
+}
+
+.DiscordUsername {
+    padding: 0.1em 0.5em;
+    border-radius: 0.2em;
+    background-color: #BDBDBD;
+}
+
+.DiscordUsername:hover {
+    background-color: #9E9E9E;
 }

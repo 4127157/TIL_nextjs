@@ -102,3 +102,16 @@ export async function getPostData(id: string){
         ...(matterResult.data as { date: string, title: string})
     };
 }
+
+//Throttle function for future use 
+export function throttle<F extends (...args: any[]) => any>(fn: F, delay: number): F{
+    let lastCall = 0;
+    return function(this: any, ...args: any[]) {
+        const currentTime = new Date().getTime();
+        if(currentTime - lastCall >= delay){
+            lastCall = currentTime;
+            fn.apply(this, args);
+        }
+    } as F;
+} 
+

@@ -1,4 +1,5 @@
 import headerStyles from '../styles/Header.module.css';
+import { parseISO, format } from 'date-fns';
 
 type Props = {
     title: string,
@@ -6,12 +7,12 @@ type Props = {
 };
 
 export default function Header({title, date}: Props) {
-    //TODO: Have to format date to human readable form with date-fns 
+    const humanDate = format(parseISO(date), 'MMMM d, yyyy');
     return (
         <header className={headerStyles.headerClass}>
             <div>
                 <h1>TIL - {title}</h1>
-                <span className={headerStyles.dateClass}>Published: <time dateTime={date} lang='en'>{date}</time></span>
+                <span className={headerStyles.dateClass}>Published: <time dateTime={date} lang='en'>{humanDate}</time></span>
             </div>
         </header>
     );
