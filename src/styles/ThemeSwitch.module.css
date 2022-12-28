@@ -1,0 +1,39 @@
+.Switch {
+    position: absolute;
+    left: calc(95vw - 4em);
+    top:calc(4em);
+    height: 3em;
+    width: 3em;
+    border-radius: 100%;
+    border: 1px solid #FAFAFA;
+    background-color: #2C3E50;
+}
+
+
+.Switch:hover::before {
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.dark {
+    border: 1px solid #212121;
+    background-color: #E0E0E0;
+}
+
+.dark:hover::before {
+    content:"";
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom:0;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,0.1);
+}
+

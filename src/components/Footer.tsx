@@ -16,6 +16,15 @@ function throttle<F extends (...args: any[]) => any>(fn: F, delay: number): F{
 export default function Footer() {
     const emojiRef = createRef();
     const discordRef = createRef();
+    
+    /*For testing purposes*/
+    let styleTest = 2;
+    let mainClassName = styles.footer;
+    if(styleTest === 1){
+        mainClassName = `${mainClassName} ${styles.Light}`;
+    }
+    /*End*/
+        
 
     const DELAY_MS = 1500;
 
@@ -48,11 +57,11 @@ export default function Footer() {
     const throttleCopy = throttle((e: React.MouseEvent) => handleClickCopy(e), DELAY_MS);
 
     return( 
-        <footer className={styles.footer}>
+        <footer className={mainClassName}>
             <ul className={styles.List}>
-                <li>Github: <a target='_blank' href="https://github.com/4127157">github.com/4127157</a></li>
+                <li>Github: <a target='_blank' href="https://github.com/4127157" className={styles.Links}>github.com/4127157</a></li>
                 <li>Discord: <span className={styles.DiscordUsername} onClick={throttleCopy}><span ref={discordRef}>4127157#0448<span ref={emojiRef} className={styles.Emoji}> 📋</span></span></span></li>
-                <li>Website: <a target='_blank' href="https://malviya.dev/">malviya.dev</a></li>
+                <li>Website: <a target='_blank' href="https://malviya.dev/" className={styles.Links}>malviya.dev</a></li>
             </ul>
             <span>Aryansh Malviya &copy; 2022</span>
         </footer>

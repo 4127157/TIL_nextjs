@@ -1,16 +1,21 @@
 .headerClass {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 0 auto 1em auto;
     min-width: 100vw;
     max-width: 100vw;
-    background-color: #E0E0E0;
+    background-color: #2C3E50;
     padding:10px;
+    color:#FAFAFA;
 }
 
 .dateClass {
     display: block;
     opacity: 0.6;
+}
+
+.themeBtnContainer {
+    display: block;
 }
