@@ -23,7 +23,7 @@
 
 .dark {
     border: 1px solid #212121;
-    background-color: #E0E0E0;
+    background-color: #BDBDBD;
 }
 
 .dark:hover::before {

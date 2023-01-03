@@ -7,6 +7,11 @@
     opacity: 0.8;
 }
 
+.Light {
+    color: black;
+    background-color: #BDBDBD;
+}
+
 .navButton:hover{
     opacity: 0.9;
 }
@@ -16,5 +21,5 @@
 }
 
 .textAligner {
-    text-align: right;
+    text-align: end;
 }

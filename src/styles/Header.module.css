@@ -11,6 +11,11 @@
     color:#FAFAFA;
 }
 
+.light {
+    background-color: #BDBDBD;
+    color:black;
+}
+
 .dateClass {
     display: block;
     opacity: 0.6;

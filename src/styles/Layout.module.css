@@ -12,3 +12,8 @@
     margin: 0 auto;
     max-width: calc(100vw/2);
 }
+
+.Light {
+    background-color: #E0E0E0;
+    color: #212121;
+}

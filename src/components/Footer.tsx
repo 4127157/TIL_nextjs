@@ -1,5 +1,6 @@
-import { createRef, useRef } from 'react';
+import { createRef, useContext, useRef } from 'react';
 import styles from '../styles/Footer.module.css';
+import { ThemeContext } from './ThemeContext';
 
 function throttle<F extends (...args: any[]) => any>(fn: F, delay: number): F{
     let lastCall = 0;
@@ -17,14 +18,9 @@ export default function Footer() {
     const emojiRef = createRef();
     const discordRef = createRef();
     
-    /*For testing purposes*/
-    let styleTest = 2;
-    let mainClassName = styles.footer;
-    if(styleTest === 1){
-        mainClassName = `${mainClassName} ${styles.Light}`;
-    }
-    /*End*/
-        
+    const {theme} = useContext(ThemeContext);
+    let mainClassName = theme === 'dark' ? styles.footer : `${styles.footer} ${styles.Light}`;
+    let linkClass = theme === 'dark' ? styles.LinksDark : '';
 
     const DELAY_MS = 1500;
 
@@ -59,9 +55,9 @@ export default function Footer() {
     return( 
         <footer className={mainClassName}>
             <ul className={styles.List}>
-                <li>Github: <a target='_blank' href="https://github.com/4127157" className={styles.Links}>github.com/4127157</a></li>
+                <li>Github: <a target='_blank' href="https://github.com/4127157" className={linkClass}>github.com/4127157</a></li>
                 <li>Discord: <span className={styles.DiscordUsername} onClick={throttleCopy}><span ref={discordRef}>4127157#0448<span ref={emojiRef} className={styles.Emoji}> 📋</span></span></span></li>
-                <li>Website: <a target='_blank' href="https://malviya.dev/" className={styles.Links}>malviya.dev</a></li>
+                <li>Website: <a target='_blank' href="https://malviya.dev/" className={linkClass}>malviya.dev</a></li>
             </ul>
             <span>Aryansh Malviya &copy; 2022</span>
         </footer>

@@ -16,7 +16,7 @@
 }
 
 /*TODO: 
- * Make theme switcher actually switch theme with context provider
+ * Make theme store in localstorage so it doesn't change on navigation
  * Add media query changes for mobile
  * Deploy on Vercel*/
 
