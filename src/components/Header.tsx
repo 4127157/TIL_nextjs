@@ -1,6 +1,8 @@
 import styles from '../styles/Header.module.css';
 import { parseISO, format } from 'date-fns';
 import ThemeSwitch from './ThemeSwitch';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from './ThemeContext';
 
 type Props = {
     title: string,
@@ -9,6 +11,8 @@ type Props = {
 
 export default function Header({title, date}: Props) {
     const humanDate = format(parseISO(date), 'MMMM d, yyyy');
+    const {theme} = useContext(ThemeContext);
+    console.log(`[Header]: ${theme}`);
     return (
         <header className={styles.headerClass}>
             <div>

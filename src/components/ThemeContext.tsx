@@ -1,3 +1,18 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
-export const ThemeContext = createContext('dark'); 
+type ThemeStr = "dark" | "light";
+
+type ThemeContext = {
+    theme: ThemeStr, 
+    setTheme: Function,
+}
+
+export const ThemeContext = createContext<ThemeContext>({
+    theme: 'dark',
+    setTheme: () => {},
+});
+
+
+
+//export const ThemeContext = createContext<any>(null);
+

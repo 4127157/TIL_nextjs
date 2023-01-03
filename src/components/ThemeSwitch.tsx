@@ -1,12 +1,16 @@
 import styles from '../styles/ThemeSwitch.module.css';
 import { Sun, Moon } from 'lucide-react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { ThemeContext } from './ThemeContext';
 
 const ThemeSwitch = () => {
-    const [icon, setIcon] = useState('sun');
+    const {theme, setTheme} = useContext(ThemeContext);
+    console.log(`[ThemSwitch]: ${theme}`);
+    
     const [className, setClassName] = useState(`${styles.Switch}`);
+
     const iconRet = () =>{
-        if(icon === 'sun'){
+        if(theme === 'dark'){
             return <Sun
                         color='#FAFAFA'
                         strokeWidth={2}/>;
@@ -18,13 +22,12 @@ const ThemeSwitch = () => {
     }
 
     const changeTheme = () => {
-        if(icon === 'sun') { 
-            setClassName(`${className} ${styles.dark}`)
-            setIcon('moon');
-        }
-        else { 
+        if(theme === 'dark') { 
+            setClassName(`${className} ${styles.dark}`);
+            setTheme('light');
+        } else { 
             setClassName(`${styles.Switch}`);
-            setIcon('sun');
+            setTheme('dark');
         }
     }
 

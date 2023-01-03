@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 import NavComp from './NavComp';
+import { ThemeContext } from './ThemeContext';
+import { useContext, useState } from 'react';
 
 type Props = {
     children: React.ReactNode,
@@ -12,13 +14,20 @@ type Props = {
     postDate: string,
 }
 
+
 export default function Layout({ children, prevLink, nextLink, pageTitle, postDate }: Props){
+    const [theme, setTheme]: ["dark", Function] = useState('dark');
+    console.log(`[Layout]: ${theme}`);
         return ( 
             <div className={layoutStyles.mainContent}>
-                <Header title={pageTitle} date={postDate}/>
-                <main className={layoutStyles.articleContent}>{children}</main>
-                <NavComp prev={prevLink} next={nextLink}/>
-                <Footer/>
+                <ThemeContext.Provider value={{theme, setTheme}}>
+                    <Header title={pageTitle} date={postDate}/>
+                    <main className={layoutStyles.articleContent}>
+                            {children}
+                    </main>
+                    <NavComp prev={prevLink} next={nextLink}/>
+                    <Footer/>
+                </ThemeContext.Provider>
             </div>
         );
 }
