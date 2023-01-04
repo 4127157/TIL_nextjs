@@ -23,6 +23,9 @@ export default function Header({title, date}: Props) {
             <div className={styles.themeBtnContainer} aria-hidden>
                 <ThemeSwitch />
             </div>
+            <div className={styles.fallbackThemeBtnContainer} aria-hidden>
+                <ThemeSwitch />
+            </div>
         </header>
     );
 }

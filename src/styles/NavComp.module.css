@@ -9,10 +9,24 @@
     width: calc(100vw/2);
 }
 
+@media (max-width: 750px){
+    .interactionContainer{
+        width: 90vw;
+    }
+}
+
 .buttonContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 450px){
+    .buttonContainer{
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+    }
 }
 
 /*TODO: 

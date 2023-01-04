@@ -7,6 +7,12 @@
     opacity: 0.8;
 }
 
+@media (max-width: 450px){
+    .navButton{
+        margin: 0.5rem 0 0.5rem 0;
+    }
+}
+
 .Light {
     color: black;
     background-color: #BDBDBD;

@@ -24,3 +24,20 @@
 .themeBtnContainer {
     display: block;
 }
+
+.fallbackThemeBtnContainer{
+    display:none;
+}
+
+@media (max-width: 1000px){
+    .themeBtnContainer{
+        display: none;
+    }
+
+    .fallbackThemeBtnContainer{
+        display:block;
+    }
+    .headerClass {
+        flex-direction: column;
+    }
+}

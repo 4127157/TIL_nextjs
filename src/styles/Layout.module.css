@@ -13,6 +13,12 @@
     max-width: calc(100vw/2);
 }
 
+@media (max-width: 750px) {
+    .articleContent{
+        max-width: 90vw;
+    }
+}
+
 .Light {
     background-color: #E0E0E0;
     color: #212121;
