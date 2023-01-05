@@ -16,14 +16,11 @@ export default function Header({title, date}: Props) {
     const humanDate = format(parseISO(date), 'MMMM d, yyyy');
     return (
         <header className={className}>
-            <div>
+            <div className={styles.metaData}>
                 <h1>TIL - {title}</h1>
                 <span className={styles.dateClass}>Published: <time dateTime={date} lang='en'>{humanDate}</time></span>
             </div>
             <div className={styles.themeBtnContainer} aria-hidden>
-                <ThemeSwitch />
-            </div>
-            <div className={styles.fallbackThemeBtnContainer} aria-hidden>
                 <ThemeSwitch />
             </div>
         </header>

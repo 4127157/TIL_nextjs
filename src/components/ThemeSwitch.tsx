@@ -34,7 +34,9 @@ const ThemeSwitch = () => {
     return (
         <>
             <button className={className} onClick={changeTheme} aria-hidden>
-                {iconRet()}
+                <div className={styles.iconContainer}>
+                    {iconRet()}
+                </div>
             </button>
         </>
     );

@@ -1,19 +1,17 @@
 .Switch {
-    position: absolute;
-    left: calc(95vw - 4em);
-    top:clamp(4rem, 100vw / 10, 5rem);
+    display: block;
+    position:relative; /*necessary to position pseudo element correctly*/
     height: 3rem;
     width: 3rem;
     border-radius: 100%;
     border: 1px solid #FAFAFA;
     background-color: #2C3E50;
+    padding:0;
 }
 
 .Switch:hover::before {
     content:"";
     position: absolute;
-    height: 3rem;
-    width: 3rem;
     top:0;
     left:0;
     right: 0;
@@ -29,32 +27,29 @@
 
 .dark:hover::before {
     content:"";
-    position: absolute;
-    height: 3rem;
-    width: 3rem;
-    top:0;
-    left:0;
-    right: 0;
-    bottom:0;
-    border-radius: 100%;
     background-color: rgba(0,0,0,0.1);
 }
 
-@media (max-width: 1000px){
-    .Switch {
-        display:block;
-        position: unset;
-        left: unset;
-        top: unset;
-        border-radius: 3px;
-        width: 5rem;
-    }
-
-    .Switch:hover::before{
-        display: none;
-    }
-
-    .dark:hover::before{
-        display: none;
-    }
+.iconContainer {
+    display: flex;
+    justify-content: center;
 }
+
+/* @media (max-width: 1000px){ */
+/*     .Switch { */
+/*         display:block; */
+/*         position: unset; */
+/*         left: unset; */
+/*         top: unset; */
+/*         border-radius: 3px; */
+/*         width: 5rem; */
+/*     } */
+
+/*     .Switch:hover::before{ */
+/*         display: none; */
+/*     } */
+
+/*     .dark:hover::before{ */
+/*         display: none; */
+/*     } */
+/* } */
