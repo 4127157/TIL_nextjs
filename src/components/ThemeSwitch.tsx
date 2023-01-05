@@ -1,11 +1,10 @@
 import styles from '../styles/ThemeSwitch.module.css';
 import { Sun, Moon } from 'lucide-react';
-import { useContext, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 const ThemeSwitch = () => {
     const {theme, setTheme} = useContext(ThemeContext);
-    console.log(`[ThemSwitch]: ${theme}`);
     
     const [className, setClassName] = useState(`${styles.Switch}`);
 
@@ -22,14 +21,22 @@ const ThemeSwitch = () => {
     }
 
     const changeTheme = () => {
-        if(theme === 'dark') { 
-            setClassName(`${className} ${styles.dark}`);
+        if(theme === 'dark') {
             setTheme('light');
-        } else { 
-            setClassName(`${styles.Switch}`);
+            window.localStorage.setItem('theme', 'light');
+        } else if(theme === 'light') {
             setTheme('dark');
+            window.localStorage.setItem('theme', 'dark');
         }
     }
+
+    useMemo(() => {
+        if(theme === 'dark'){
+            setClassName(`${styles.Switch}`);
+        } else if (theme === 'light'){
+            setClassName(`${className} ${styles.dark}`);
+        }
+    }, [theme]);
 
     return (
         <>

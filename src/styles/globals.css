@@ -25,3 +25,13 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/*Changes to font size for responsiveness*/
+
+h1 {
+    font-size: clamp(1.25rem, 2.5vw, 4rem);
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 2rem);
+}
