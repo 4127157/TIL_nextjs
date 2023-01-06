@@ -12,7 +12,7 @@ type Props = {
 
 const NavButton = ({align, to, text}: Props) => {
     const router = useRouter();
-    to+= router.asPath; 
+    to=router.asPath+to ; 
     console.log(to);
     console.log(`[NavButton]: the 'router.asPath' prop above`);
     const {theme} = useContext(ThemeContext);
