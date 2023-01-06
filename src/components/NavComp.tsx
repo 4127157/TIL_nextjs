@@ -14,10 +14,10 @@ const NavComp = ({prev, next}: Props) => {
                     <div className={styles.buttonContainer}>
                         { prev == '' ? 
                         <NavButton align='left' to='./' text='Home'/> :
-                        <NavButton align='left' to={`.${prev}`} text="Previous"/>}
+                        <NavButton align='left' to={prev} text="Previous"/>}
                         { next == '' ? 
                         <NavButton align='right' to='./' text='Home'/>  : 
-                        <NavButton align='right' to={`.${next}`} text="Next"/>}
+                        <NavButton align='right' to={next} text="Next"/>}
                     </div>
                 </div>
             </section>
