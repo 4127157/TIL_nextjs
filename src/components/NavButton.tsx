@@ -10,7 +10,7 @@ type Props = {
 };
 
 const NavButton = ({align, to, text}: Props) => {
-    console.log(to);
+    console.log(`./${to}`);
     console.log(`[NavButton]: the 'to' prop above`);
     const {theme} = useContext(ThemeContext);
     let className = styles.navButton;
@@ -27,7 +27,7 @@ const NavButton = ({align, to, text}: Props) => {
     }
 
     return (
-        <Link className={className} href={`\../${to}`} passHref>
+        <Link className={className} href={`${to}`} passHref>
             {text}
         </Link>
     );
