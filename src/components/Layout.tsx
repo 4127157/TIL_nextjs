@@ -30,15 +30,6 @@ export default function Layout({ children, prevLink, nextLink, pageTitle, postDa
         return 'dark';
     }
 
-    // function clearLocalStorage() {
-    //     console.log(`[Layout]: [clearLocalStorage]: Theme in localStorage ${window.localStorage.getItem('theme')}`);
-
-    //     window.localStorage.removeItem('theme');
-
-    //     console.log(`[Layout]: Local Storage Cleared`);
-    //     console.log(`[Layout]: [clearLocalStorage]: Theme in localStorage ${window.localStorage.getItem('theme')}`);
-    // }
-
     let contentClass = theme === 'dark' ? layoutStyles.mainContent : `${layoutStyles.mainContent} ${layoutStyles.Light}`;
         return ( 
             <div className={contentClass}>
