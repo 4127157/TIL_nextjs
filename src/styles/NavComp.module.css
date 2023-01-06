@@ -30,7 +30,9 @@
 }
 
 /*TODO: 
- * Make theme store in localstorage so it doesn't change on navigation
- * Add media query changes for mobile
- * Deploy on Vercel*/
+ * Deploy on Vercel
+ * Add relevant meta tags in HTML
+ * Make it more compliant with accessibility
+ * Detect system theme and apply until changed
+ * Make node-cli utility to create new posts with current date*/
 
