@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import styles from '../styles/NavButton.module.css';
 import { ThemeContext } from './ThemeContext';
@@ -10,8 +11,9 @@ type Props = {
 };
 
 const NavButton = ({align, to, text}: Props) => {
-    console.log(`./${to}`);
-    console.log(`[NavButton]: the 'to' prop above`);
+    const router = useRouter();
+    console.log(`${router.asPath}${to}`);
+    console.log(`[NavButton]: the 'router.asPath' prop above`);
     const {theme} = useContext(ThemeContext);
     let className = styles.navButton;
     
