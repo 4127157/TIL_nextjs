@@ -11,8 +11,3 @@ export const ThemeContext = createContext<ThemeContext>({
     theme: '',
     setTheme: () => {},
 });
-
-
-
-//export const ThemeContext = createContext<any>(null);
-
