@@ -11,10 +11,10 @@ type Props = {
 };
 
 const NavButton = ({align, to, text}: Props) => {
-    const router = useRouter();
-    to=router.asPath+to; 
-    console.log(to);
-    console.log(`[NavButton]: the 'router.asPath' prop above`);
+    if(to !== '/'){
+        to = '/'+to;
+    }
+    console.log(`[NavButton]: 'to' ${to}`);
     const {theme} = useContext(ThemeContext);
     let className = styles.navButton;
     
