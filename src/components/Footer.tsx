@@ -15,8 +15,8 @@ function throttle<F extends (...args: any[]) => any>(fn: F, delay: number): F{
 
 
 export default function Footer() {
-    const emojiRef = createRef();
-    const discordRef = createRef();
+    const emojiRef = createRef<HTMLSpanElement>();
+    const discordRef = createRef<HTMLSpanElement>();
     
     const {theme} = useContext(ThemeContext);
     let mainClassName = theme === 'dark' ? styles.footer : `${styles.footer} ${styles.Light}`;
