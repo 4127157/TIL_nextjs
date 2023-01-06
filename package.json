@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "next dev -p 8181",
     "build": "next build",
+    "export": "next export",
     "start": "next start -p 8181",
     "lint": "next lint"
   },
