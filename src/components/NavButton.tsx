@@ -30,9 +30,9 @@ const NavButton = ({align, to, text}: Props) => {
     }
 
     return (
-        <Link className={className} href={to} passHref>
+        <a className={className} href={`.${to}`}>
             {text}
-        </Link>
+        </a>
     );
 }
 
